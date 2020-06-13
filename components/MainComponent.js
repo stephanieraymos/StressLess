@@ -13,6 +13,7 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { connect } from 'react-redux';
 import { fetchTips, fetchComments, fetchPromotions,
     fetchPartners } from '../redux/ActionCreators';
+import * as WebBrowser from 'expo-web-browser';	
 //import Music from './MusicComponent';
 //import Journal from './JournalComponent';
 //import Activities from './ActivitiesComponent';
@@ -212,7 +213,7 @@ const MainNavigator = createDrawerNavigator(
                         name='list'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#980000' : 'gray'}                    />
+                        color={focused ? '#980000' : 'gray'} />
                 )
             }
         },
@@ -273,7 +274,7 @@ const MainNavigator = createDrawerNavigator(
                         color={focused ? '#980000' : 'gray'}                    />
                 )
             }
-        },
+        }
         // Activities: {
         //     screen: ActivitiesNavigator,
         //     navigationOptions: {
