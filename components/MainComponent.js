@@ -372,5 +372,4 @@ const styles = StyleSheet.create({
         fontSize: 24
     }
 });
-console.log(props.tips);
 export default connect(null, mapDispatchToProps)(Main);

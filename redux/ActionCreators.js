@@ -31,9 +31,9 @@ export const addComments = (comments) => ({
     payload: comments
 });
 
-export const fetch = () => dispatch => {
+export const fetchTips = () => dispatch => {
 
-    dispatch(Loading());
+    dispatch(tipsLoading());
 
     return fetch(baseUrl + 'tips')
         .then(response => {
@@ -58,7 +58,7 @@ export const tipsLoading = () => ({
     type: ActionTypes.TIPS_LOADING
 });
 
-export const Failed = errMess => ({
+export const tipsFailed = errMess => ({
     type: ActionTypes.TIPS_FAILED,
     payload: errMess
 });
