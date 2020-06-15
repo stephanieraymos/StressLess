@@ -21,7 +21,7 @@ const mapDispatchToProps = {
 
 function RenderTip(props) {
 
-  const { tips } = props;
+  const { tip } = props;
 
   if (tip) {
     return (
@@ -154,7 +154,7 @@ class TipInfo extends Component {
 
   render() {
     const tipId = this.props.navigation.getParam('tipId');
-    const tip = this.props.filter(tip => tip.id === tipId)[0];
+    const tip = this.props.tips.tips.filter(tip => tip.id === tipId)[0];
     const comments = this.props.comments.comments.filter(comment => comment.tipId === tipId);
     return (
       <ScrollView>
