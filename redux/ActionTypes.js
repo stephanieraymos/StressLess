@@ -1,6 +1,6 @@
-export const _LOADING = '_LOADING';
-export const ADD_ = 'ADD_';
-export const _FAILED = '_FAILED';
+export const TIPS_LOADING = 'TIPS_LOADING';
+export const ADD_TIPS = 'ADD_TIPS';
+export const TIPS_FAILED = 'TIPS_FAILED';
 
 export const ADD_COMMENTS = 'ADD_COMMENTS';
 export const COMMENTS_FAILED = 'COMMENTS_FAILED';
