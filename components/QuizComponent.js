@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Button, Alert, Text, TextInput } from 'react-native';
+import { ScrollView, Button, Alert, Text, TextInput } from 'react-native';
 
 export class Quiz extends Component {
 
@@ -9,9 +9,9 @@ export class Quiz extends Component {
 
   render() {
     return (
-      <View >
+      <ScrollView>
       <Text >Where is your favorite place?</Text>
-      <View>
+      <ScrollView>
       <TextInput
           placeholder="This can be as simple as your own home, or as complex as a place you've seen in your dreams."
           style={{
@@ -75,14 +75,14 @@ export class Quiz extends Component {
           textAlignVertical='top'    >
         </TextInput>
 
-      </View>
+      </ScrollView>
         <Button
           title="Save"
           color="#2a9df4"
           style={{padding: 10}}
           onPress={() => Alert.alert('Quiz saved')}
         />
-      </View>
+      </ScrollView>
     )
   }
 }

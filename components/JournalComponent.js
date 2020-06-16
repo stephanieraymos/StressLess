@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, TextInput, Button, Alert } from 'react-native';
+import { ScrollView, TextInput, Button, Alert } from 'react-native';
 
 export class Journal extends Component {
 
@@ -9,7 +9,7 @@ export class Journal extends Component {
 
   render() {
     return (
-      <View
+      <ScrollView
       style={{}}>
         <TextInput
           placeholder="This is your journal"
@@ -26,7 +26,7 @@ export class Journal extends Component {
           style={{padding: 10}}
           onPress={() => Alert.alert('Journal saved')}
         />
-      </View>
+      </ScrollView>
     )
   }
 }
