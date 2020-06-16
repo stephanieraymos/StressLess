@@ -22,7 +22,7 @@ export class Journal extends Component {
         </TextInput>
         <Button
           title="Save"
-          color="#2a9df4"
+          color="#1AA7A6"
           style={{padding: 10}}
           onPress={() => Alert.alert('Journal saved')}
         />

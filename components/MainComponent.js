@@ -33,7 +33,7 @@ const AboutNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#2a9df4'
+                backgroundColor: '#1AA7A6'
               },
               headerTintColor: '#fff',
               headerTitleStyle: {
@@ -56,7 +56,7 @@ const ContactNavigator = createStackNavigator(
     {
         navigationOptions: ({navigation}) => ({
             headerStyle: {
-                backgroundColor: '#2a9df4'
+                backgroundColor: '#1AA7A6'
               },
               headerTintColor: '#fff',
               headerTitleStyle: {
@@ -79,7 +79,7 @@ const ContactNavigator = createStackNavigator(
       {
           navigationOptions: ({navigation}) => ({
               headerStyle: {
-                  backgroundColor: '#2a9df4'
+                  backgroundColor: '#1AA7A6'
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -102,7 +102,7 @@ const ContactNavigator = createStackNavigator(
         {
             navigationOptions: ({navigation}) => ({
                 headerStyle: {
-                    backgroundColor: '#5637DD'
+                    backgroundColor: '#1AA7A6'
                 },
                 headerTintColor: '#fff',
                 headerTitleStyle: {
@@ -138,7 +138,7 @@ const ContactNavigator = createStackNavigator(
       initialRouteName: 'Directory',
       navigationOptions: {
           headerStyle: {
-              backgroundColor: '#2a9df4'
+              backgroundColor: '#1AA7A6'
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
@@ -155,7 +155,7 @@ const HomeNavigator = createStackNavigator(
     {
       navigationOptions: ({navigation}) => ({
           headerStyle: {
-              backgroundColor: '#2a9df4'
+              backgroundColor: '#1AA7A6'
             },
             headerTintColor: '#fff',
             headerTitleStyle: {
@@ -224,7 +224,7 @@ const MainNavigator = createDrawerNavigator(
                         name='home'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'}              
+                        color={focused ? '#1AA7A6' : 'gray'}              
                         />
                 )
             }
@@ -239,7 +239,7 @@ const MainNavigator = createDrawerNavigator(
                         name='book'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'}                    />
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }
         },
@@ -253,7 +253,7 @@ const MainNavigator = createDrawerNavigator(
                         name='chess'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'}                    />
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }
         },
@@ -266,7 +266,7 @@ const MainNavigator = createDrawerNavigator(
                         name='list'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'} />
+                        color={focused ? '#1AA7A6' : 'gray'} />
                 )
             }
         },
@@ -295,7 +295,7 @@ const MainNavigator = createDrawerNavigator(
                         name={'info-circle'}
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'}
+                        color={focused ? '#1AA7A6' : 'gray'}
                         
                     />
                 )
@@ -310,7 +310,7 @@ const MainNavigator = createDrawerNavigator(
                         name='address-card'
                         type='font-awesome'
                         size={24}
-                        color={focused ? '#2a9df4' : 'gray'}                    />
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }
         },
@@ -323,7 +323,7 @@ const MainNavigator = createDrawerNavigator(
         //                 name='brain'
         //                 type='font-awesome'
         //                 size={24}
-        //                 color={focused ? '#2a9df4' : 'gray'}                    />
+        //                 color={focused ? '#1AA7A6' : 'gray'}                    />
         //         )
         //     }
         // },
@@ -337,7 +337,7 @@ const MainNavigator = createDrawerNavigator(
         //                 name='music'
         //                 type='font-awesome'
         //                 size={24}
-        //                 color={focused ? '#2a9df4' : 'gray'}                    />
+        //                 color={focused ? '#1AA7A6' : 'gray'}                    />
         //         )
         //     }
         // }
@@ -345,7 +345,7 @@ const MainNavigator = createDrawerNavigator(
     {
         drawerBackgroundColor: '#CEC8FF',
         contentOptions: {
-              activeTintColor: '#2a9df4'
+              activeTintColor: '#1AA7A6'
             },
         contentComponent: CustomDrawerContentComponent
     }
@@ -374,7 +374,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     drawerHeader: {
-        backgroundColor: '#2a9df4',
+        backgroundColor: '#1AA7A6',
         height: 140,
         alignItems: 'center',
         justifyContent: 'center',
@@ -390,7 +390,7 @@ const styles = StyleSheet.create({
     },
     drawerImage: {
         margin: 10,
-        height: 80,
+        height: 100,
         width: 100
     },
     stackIcon: {
