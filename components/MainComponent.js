@@ -16,6 +16,7 @@ import { fetchTips, fetchComments, fetchPromotions,
 import * as WebBrowser from 'expo-web-browser';	
 //import Music from './MusicComponent';
 import Journal from './JournalComponent';
+import Yoga from './YogaComponent';
 import Quiz from './QuizComponent';
 
 //import Activities from './ActivitiesComponent';
@@ -95,6 +96,29 @@ const ContactNavigator = createStackNavigator(
             })
       }
     );
+    
+  const YogaNavigator = createStackNavigator(
+    {
+        Yoga: { screen: Yoga }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#1AA7A6'
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                color: '#fff'
+              },
+              headerLeft: <Icon
+                  name='stretch'
+                  type='font-awesome'
+                  iconStyle={styles.stackIcon}
+                  onPress={() => navigation.toggleDrawer()}
+          />
+          })
+    }
+  );
 
     const QuizNavigator = createStackNavigator(
         {
@@ -276,6 +300,21 @@ const MainNavigator = createDrawerNavigator(
                 drawerIcon: ({focused}) => (
                     <Icon
                         name='book'
+                        type='font-awesome'
+                        size={24}
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
+                )
+            }
+        },
+
+        
+        Yoga: {
+            screen: YogaNavigator,
+            navigationOptions: {
+                drawerLabel: 'Yoga',
+                drawerIcon: ({focused}) => (
+                    <Icon
+                        name='stretch'
                         type='font-awesome'
                         size={24}
                         color={focused ? '#1AA7A6' : 'gray'}                    />
