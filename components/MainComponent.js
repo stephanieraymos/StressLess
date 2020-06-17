@@ -239,6 +239,21 @@ const CustomDrawerContentComponent = props => (
 
 const MainNavigator = createDrawerNavigator(
     {
+
+        Login: {
+            screen: LoginNavigator,
+            navigationOptions: {
+                drawerIcon: ({tintColor}) => (
+                    <Icon
+                        name='sign-in'
+                        type='font-awesome'
+                        size={24}
+                        color={tintColor}
+                    />
+                )
+            }
+        },
+
         Home: {
             screen: HomeNavigator,
             navigationOptions: {
@@ -367,7 +382,8 @@ const MainNavigator = createDrawerNavigator(
         // }
     },
     {
-        drawerBackgroundColor: '#CEC8FF',
+        initialRouteName: 'Home',
+        drawerBackgroundColor: '#d0efff',
         contentOptions: {
               activeTintColor: '#1AA7A6'
             },
