@@ -51,7 +51,7 @@ function RenderTip(props) {
               style={styles.cardItem}
               name='pencil'
               type='font-awesome'
-              color='#5637DD'
+              color='#d0efff'
               raised
               reverse
               onPress={() => props.onShowModal()}
@@ -207,7 +207,7 @@ class TipInfo extends Component {
             <View steyle={{ margin: 10 }}>
               <Button
                 title='Submit'
-                color='#5637DD'
+                color='#d0efff'
                 onPress={() => {
                   this.handleComment(tipId);
                   this.resetForm();
