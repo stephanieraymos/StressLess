@@ -2,14 +2,13 @@ import React, {Component} from 'react';
 import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager, Image } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 export default class Accordian extends Component{
+
     constructor(props) {
         super(props);
         this.state = { 
-          data: props.data,
-          image: props.image,
-          link: props.link,
           expanded : false,
         }
+
         if (Platform.OS === 'android') {
             UIManager.setLayoutAnimationEnabledExperimental(true);
         }
@@ -25,12 +24,13 @@ export default class Accordian extends Component{
             {
                 this.state.expanded &&
                 <View style={styles.child}>
-                    <Text>{this.props.data}</Text>
+                    {/* <Text>{this.props.data}</Text>
                     <Image
                       style= {styles.imageStyle}
                       source= {this.props.image}
                       />
-                    <Text>{this.props.link}</Text>    
+                    <Text>{this.props.link}</Text>     */}
+                    {this.props.children}
                 </View>
             }
        </View>
