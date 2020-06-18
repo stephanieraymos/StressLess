@@ -68,6 +68,53 @@ export const addTips = tips => ({
     payload: tips
 });
 
+
+
+
+
+
+export const fetchMusic = () => dispatch => {
+
+    dispatch(MusicLoading());
+
+    return fetch(baseUrl + 'music')
+        .then(response => {
+                if (response.ok) {
+                return response;
+                } else {
+                    const error = new Error(`Error ${response.status}: ${response.statusText}`);
+                    error.response = response;
+                throw error;
+                }
+            },
+            error => {
+                const errMess = new Error(error.message);
+                throw errMess;
+            })
+        .then(response => response.json())
+        .then(music => dispatch(addMusic(music)))
+        .catch(error => dispatch(musicFailed(error.message)));
+};
+
+export const musicLoading = () => ({
+    type: ActionTypes.MUSIC_LOADING
+});
+
+export const musicFailed = errMess => ({
+    type: ActionTypes.MUSIC_FAILED,
+    payload: errMess
+});
+
+export const addMusic = music => ({
+    type: ActionTypes.ADD_MUSIC,
+    payload: music
+});
+
+
+
+
+
+
 export const fetchPromotions = () => dispatch => {
     
     dispatch(promotionsLoading());

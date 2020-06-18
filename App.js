@@ -5,6 +5,8 @@ import { ConfigureStore } from './redux/ConfigureStore';
 import { PersistGate } from 'redux-persist/es/integration/react';
 import Loading from './components/LoadingComponent';
 
+console.disableYellowBox = true;
+
 const { persistor, store } = ConfigureStore();
 
 export default function App() {

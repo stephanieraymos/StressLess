@@ -6,6 +6,7 @@ import { comments } from './comments';
 import { promotions } from './promotions';
 import { partners } from './partners';
 import { favorites } from './favorites';
+import { music } from './music';
 import { persistStore, persistCombineReducers } from 'redux-persist';
 import storage from 'redux-persist/es/storage';
 
@@ -21,7 +22,8 @@ export const ConfigureStore = () => {
             comments,
             partners,
             promotions,
-            favorites
+            favorites,
+            music
         }),
         applyMiddleware(thunk, logger)
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, ScrollView, FlatList, Linking, Modal, Button, StyleSheet, Share } from 'react-native';
+import { Text, View, ScrollView, FlatList, Linking, Modal, Button, StyleSheet, Share, TouchableHighlight } from 'react-native';
 import { Card, Icon, Rating, Input } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -19,10 +19,11 @@ const mapDispatchToProps = {
   postComment: (tipId, rating, author, text) => (postComment(tipId, rating, author, text))
 };
 
+
 function RenderTip(props) {
 
   const { tip } = props;
-
+  console.log(tip);
   const shareTip = (title, message, url) => {
     Share.share({
       title: title,
@@ -35,19 +36,35 @@ function RenderTip(props) {
 
   if (tip) {
     return (
-      <Animatable.View animation='fadeInDown' duration={1000} delay={500}>
 
+      <Animatable.View animation='fadeInDown' duration={1000} delay={500}>
+        {/* You can wrap image in Touchable Highlight or TouchableOpacity
+          You can create a custom card component have receive on press prop
+        */}
         <Card
           featuredTitle={tip.name}
+
           image={{ uri: baseUrl + tip.image }}>
-          <Text style={{ margin: 10 }}>
-            {tip.description}
-          </Text>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('Journal')}>
+            <Text style={{ margin: 10 }}>
+              {tip.description}
+            </Text>
+          </TouchableHighlight>
+
           <View
             style={{
               display: 'flex', flexDirection: 'row',
               justifyContent: 'space-between'
             }}>
+            {/* <Icon
+              name={this.component ? 'heart' : 'heart-o'}
+              type='font-awesome'
+              color='#f50'
+              raised
+              reverse
+              onPress={() => this.props.tips.name ?
+                console.log("Already set as a favorite tip") : props.markFavorite()}
+            /> */}
             <Icon
               name={props.favorite ? 'heart' : 'heart-o'}
               type='font-awesome'

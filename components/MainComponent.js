@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Home from './HomeComponent';
 import About from './AboutComponent';
 import Contact from './ContactComponent';
-import Directory from './DirectoryComponent';
+import Relief from './ReliefComponent';
 import TipInfo from './TipInfoComponent';
 import Favorites from './FavoritesComponent';
 import Login from './LoginComponent';
@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 import { fetchTips, fetchComments, fetchPromotions,
     fetchPartners } from '../redux/ActionCreators';
 import * as WebBrowser from 'expo-web-browser';	
-//import Music from './MusicComponent';
+import Music from './MusicComponent';
 import Journal from './JournalComponent';
 import Yoga from './YogaComponent';
 import Quiz from './QuizComponent';
@@ -143,11 +143,11 @@ const ContactNavigator = createStackNavigator(
         }
     );
   
-  const DirectoryNavigator = createStackNavigator(
+  const ReliefNavigator = createStackNavigator(
 
     {
-      Directory: { 
-          screen: Directory,
+      Relief: { 
+          screen: Relief,
           navigationOptions: ({navigation}) => ({
             headerLeft: <Icon
                 name='list'
@@ -160,7 +160,7 @@ const ContactNavigator = createStackNavigator(
       TipInfo: { screen: TipInfo }
     }, 
     {
-      initialRouteName: 'Directory',
+      initialRouteName: 'Relief',
       navigationOptions: {
           headerStyle: {
               backgroundColor: '#1AA7A6'
@@ -192,6 +192,29 @@ const HomeNavigator = createStackNavigator(
                 iconStyle={styles.stackIcon}
                 onPress={() => navigation.toggleDrawer()}
         />
+        })
+    }
+);
+
+const MusicNavigator = createStackNavigator(
+    {
+        Music: { screen: Music }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#1AA7A6'
+            },
+            headerTintColor: '#fff',
+            headerTitleStyle: {
+                color: '#fff'
+            },
+            headerLeft: <Icon
+                name='heart'
+                type='font-awesome'
+                iconStyle={styles.stackIcon}
+                onPress={() => navigation.toggleDrawer()}
+            />
         })
     }
 );
@@ -336,8 +359,8 @@ const MainNavigator = createDrawerNavigator(
             }
         },
 
-        Directory: {
-            screen: DirectoryNavigator,
+        Relief: {
+            screen: ReliefNavigator,
             navigationOptions: {
                 drawerIcon: ({focused}) => (
                     <Icon
@@ -406,19 +429,19 @@ const MainNavigator = createDrawerNavigator(
         //     }
         // },
 
-        // Music: {
-        //     screen: MusicNavigator,
-        //     navigationOptions: {
-        //         drawerLabel: 'Music',
-        //         drawerIcon: ({focused}) => (
-        //             <Icon
-        //                 name='music'
-        //                 type='font-awesome'
-        //                 size={24}
-        //                 color={focused ? '#1AA7A6' : 'gray'}                    />
-        //         )
-        //     }
-        // }
+        Music: {
+            screen: MusicNavigator,
+            navigationOptions: {
+                drawerLabel: 'Music',
+                drawerIcon: ({focused}) => (
+                    <Icon
+                        name='music'
+                        type='font-awesome'
+                        size={24}
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
+                )
+            }
+        }
     },
     {
         initialRouteName: 'Home',

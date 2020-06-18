@@ -13,17 +13,17 @@ const mapStateToProps = state => {
 };
 
 
-class Directory extends Component {
+class Relief extends Component {
 
 
   static navigationOptions = {
-    title: 'Directory'
+    title: 'Relief'
   };
 
   render() {
-    console.log("Directory", this.props)
+    console.log("Relief", this.props)
     const { navigate } = this.props.navigation;
-    const renderDirectoryItem = ({ item }) => {
+    const renderReliefItem = ({ item }) => {
       return (
         <Animatable.View animation='fadeInRightBig' duration={2000}>
 
@@ -52,11 +52,11 @@ class Directory extends Component {
     return (
       <FlatList
         data={this.props.tips.tips}
-        renderItem={renderDirectoryItem}
+        renderItem={renderReliefItem}
         keyExtractor={item => item.id.toString()}
       />
     );
   }
 
 }
-export default connect(mapStateToProps)(Directory);
+export default connect(mapStateToProps)(Relief);

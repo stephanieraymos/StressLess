@@ -8,8 +8,6 @@ import Loading from './LoadingComponent';
 const mapStateToProps = state => {
     return {
         tips: state.tips,
-        promotions: state.promotions,
-        partners: state.partners
     };
 };
 
@@ -55,7 +53,7 @@ class Home extends Component {
             this.state.scaleValue,
             {
                 toValue: 1,
-                duration: 500
+                duration: 400
             }
         ).start();
     }
@@ -72,19 +70,9 @@ class Home extends Component {
         return (
             <Animated.ScrollView style={{ transform: [{ scale: this.state.scaleValue }] }}>
                 <RenderItem
-                    item={this.props.tips.tips.filter(tip => tip.featured)[0]}
+                    item={this.props.tips.tips}
                     isLoading={this.props.tips.isLoading}
                     errMess={this.props.tips.errMess}
-                />
-                <RenderItem
-                    item={this.props.promotions.promotions.filter(promotion => promotion.featured)[0]}
-                    isLoading={this.props.promotions.isLoading}
-                    errMess={this.props.promotions.errMess}
-                />
-                <RenderItem
-                    item={this.props.partners.partners.filter(partner => partner.featured)[0]}
-                    isLoading={this.props.partners.isLoading}
-                    errMess={this.props.partners.errMess}
                 />
             </Animated.ScrollView>
         );
