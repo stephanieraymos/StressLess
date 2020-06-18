@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 import Accordian from './AccordionComponent';
 import WebView from 'react-native-webview';
@@ -9,55 +9,27 @@ export class YogaComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      yoga:[
+      yoga: [
         {
           title: 'Child\'s Pose',
           data: 'Child\'s Pose can be done as shown; with your arms resting along your sides, or with your arms extended straight out above your head (refered to as the extended child\'s pose.',
-          image: <Image source= {'images/childs-pose.png'}/>,
-          link: 
-            <WebView
-              style={{flex:1, height: 100, widtch: 100}}
-              javaScriptEnabled={true}
-              source={{uri: 'https://www.youtube.com/watch?time_continue=5&amp;v=IoeE1Fx31nc'}}
-            />
+          image: 'images/childs-pose.png',
+          link: 'https://www.youtube.com/watch?time_continue=5&amp;v=IoeE1Fx31nc'
+
         },
         {
           title: 'Legs Up the Wall Pose',
           data: 'The Legs Up the Wall Pose is an inversion pose in which you lie on the floor next to a wall and place your legs together vertically against the wall.',
-          image: 'images/childs-pose.png'
+          image: 'images/childs-pose.png',
+          link: 'https://www.youtube.com/watch?v=xmcDj4Bf--0'
         },
-        {
-          title: '',
-          data: '',
-          image: ''
-        },
-        {
-          title: '',
-          data: '',
-          image: ''
-        },
-        {
-          title: '',
-          data: '',
-          image: ''
-        },
-        {
-          title: '',
-          data: '',
-          image: ''
-        },
-        {
-          title: '',
-          data: '',
-          image: ''
-        }
       ]
     }
   }
   render() {
     return (
       <View style={styles.container}>
-        { this.renderAccordions() }
+        {this.renderAccordions()}
       </View>
     );
   }
@@ -69,26 +41,30 @@ export class YogaComponent extends Component {
           title={item.title}
         >
           <View>
+            <View
+              style={{ height: 100, width: 100 }}>
+              <Image source={item.image} />
+            </View>
             <Text>
               {item.data}
-              <View 
-              style={{height: 100, width: 100 }}
-              >
-                {item.image}
-              </View>
             </Text>
+            <WebView
+              style={{ height: 100, width: 100 }}
+              javaScriptEnabled={true}
+              source={{ uri: item.link }}
+            />
           </View>
         </Accordian>
       );
     }
-      return items;
+    return items;
   }
 }
 const styles = StyleSheet.create({
   container: {
-   flex:1,
-   paddingTop:100,
-   backgroundColor:'#d0efff',
+    flex: 1,
+    paddingTop: 100,
+    backgroundColor: '#d0efff',
   }
 });
 export default YogaComponent
