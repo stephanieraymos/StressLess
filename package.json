@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap-social": "^5.1.1",
     "expo": "~37.0.3",
+    "expo-image-picker": "^7.0.0",
     "expo-mail-composer": "^7.0.0",
     "expo-secure-store": "^7.0.0",
     "font-awesome": "^4.7.0",
