@@ -128,7 +128,7 @@ class RegisterTab extends Component {
             lastname: '',
             email: '',
             remember: false,
-            imageUrl: baseUrl + 'images/logo.png'
+            imageUrl: baseUrl + 'images/logo.jpg'
         };
     }
 
@@ -178,7 +178,7 @@ class RegisterTab extends Component {
                     <View style={styles.imageContainer}>
                         <Image
                             source={{uri: this.state.imageUrl}}
-                            loadingIndicatorSource={require('./images/logo.png')}
+                            loadingIndicatorSource={require('../shared/images/logo.jpg')}
                             style={styles.image}
                         />
                         <Button
