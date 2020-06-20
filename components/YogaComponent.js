@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, ScrollView, Text, Image, Linking, Button } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Image, Linking } from 'react-native';
+import { Button } from 'react-native-elements';
 import Accordian from './AccordionComponent';
 import { baseUrl } from '../shared/baseUrl';
 export class YogaComponent extends Component {
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#d0efff',
   }
 });
-export default YogaComponent
+export default YogaComponent;
 
 // constructor(props) {
 //   super(props);
