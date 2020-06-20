@@ -26,7 +26,6 @@ const Link = () => {
   return (
     <View style={styles.container}>
       <OpenURLButton url={supportedURL}>Open Supported URL</OpenURLButton>
-      <OpenURLButton url={unsupportedURL}>Open Unsupported URL</OpenURLButton>
     </View>
   );
 };

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { ScrollView, TouchableOpacity, Linking } from 'react-native';
 import { Card } from 'react-native-elements';
-import Link from './LinkingComponent';
 import { baseUrl } from '../shared/baseUrl';
-import MUSIC from '../shared/music';
+import { MUSIC } from '../shared/music';
 
 export class Music extends Component {
 
@@ -18,17 +17,21 @@ export class Music extends Component {
   }
 
   render() {
+    console.log('this is', this.state)
     return (
+
       <ScrollView
         style={{}}>
-        <TouchableOpacity
-          onPress={Linking.openUrl(this.props.music.link)}>
+        {this.state.music.map(item => <TouchableOpacity
+          onPress={() => Linking.openURL(item.link)}>
+          
           <Card
-            featuredTitle={this.props.music.name}
-            image={{ uri: baseUrl + this.props.music.image }}>
+            featuredTitle={item.name}
+            image={{ uri: baseUrl + item.image }}>
           </Card>
         </TouchableOpacity>
-
+)}
+        
       </ScrollView>
     )
   }

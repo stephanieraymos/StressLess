@@ -67,13 +67,15 @@ class Home extends Component {
     }
 
     render() {
+        console.log('featured', this.props.tips.tips.filter(item => item.featured))
         return (
             <Animated.ScrollView style={{ transform: [{ scale: this.state.scaleValue }] }}>
-                <RenderItem
-                    item={this.props.tips.tips}
+                {this.props.tips.tips.filter(item => item.featured).map(item => <RenderItem
+                    item={item}
                     isLoading={this.props.tips.isLoading}
                     errMess={this.props.tips.errMess}
-                />
+                />)}
+
             </Animated.ScrollView>
         );
     }

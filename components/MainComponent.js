@@ -157,7 +157,9 @@ const ContactNavigator = createStackNavigator(
             />
           })
         },
-      TipInfo: { screen: TipInfo }
+      TipInfo: { screen: TipInfo },
+      Journal: { screen: Journal }
+
     }, 
     {
       initialRouteName: 'Relief',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, Linking, Button } from 'react-native';
 import Accordian from './AccordionComponent';
-import WebView from 'react-native-webview';
+import { baseUrl } from '../shared/baseUrl';
 export class YogaComponent extends Component {
   static navigationOptions = {
     title: 'Yoga'
@@ -34,30 +34,29 @@ export class YogaComponent extends Component {
     );
   }
   renderAccordions = () => {
-    const items = [];
-    for (item of this.state.yoga) {
-      items.push(
-        <Accordian
-          title={item.title}
-        >
-          <View>
-            <View
-              style={{ height: 100, width: 100 }}>
-              <Image source={item.image} />
-            </View>
-            <Text>
-              {item.data}
-            </Text>
-            <WebView
+    return this.state.yoga.map(item =>  
+    {
+      console.log(item.image)
+      return(<Accordian
+      title={item.title}
+    >
+      <View>
+        <View
+          style={{ height: 100, width: 100 }}>
+            {console.log('image', baseUrl + item.image)}
+            <Image
+              source={{uri: baseUrl + item.image}}
               style={{ height: 100, width: 100 }}
-              javaScriptEnabled={true}
-              source={{ uri: item.link }}
-            />
-          </View>
-        </Accordian>
-      );
-    }
-    return items;
+                           
+                        />
+        </View>
+        <Text>
+          {item.data}
+        </Text>
+        <Button title="Click me" onPress={ ()=>{ Linking.openURL(item.link)}} />
+      </View>
+    </Accordian>)})
+
   }
 }
 const styles = StyleSheet.create({

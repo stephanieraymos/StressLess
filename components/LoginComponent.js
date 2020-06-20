@@ -261,7 +261,7 @@ const Login = createBottomTabNavigator(
     },
     {
         tabBarOptions: {
-            activeBackgroundColor: '#5637DD',
+            activeBackgroundColor: '#1AA7A6',
             inactiveBackgroundColor: '#CEC8FF',
             activeTintColor: '#fff',
             inactiveTintColor: '#808080',

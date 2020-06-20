@@ -21,6 +21,7 @@ const mapDispatchToProps = {
 
 
 function RenderTip(props) {
+  console.log('RenderTip', props)
 
   const { tip } = props;
   console.log(tip);
@@ -45,7 +46,8 @@ function RenderTip(props) {
           featuredTitle={tip.name}
 
           image={{ uri: baseUrl + tip.image }}>
-          <TouchableHighlight onPress={() => this.props.navigation.navigate('Journal')}>
+            {console.log('message', props.navigation)}
+          <TouchableHighlight onPress={() => props.navigation.navigate(tip.component)}>
             <Text style={{ margin: 10 }}>
               {tip.description}
             </Text>
@@ -200,6 +202,7 @@ class TipInfo extends Component {
           markFavorite={() => this.markFavorite(tipId)}
           onShowModal={() => this.toggleModal()}
           message={() => this.message()}
+          {...this.props}
         />
         <RenderComments comments={comments} />
 
