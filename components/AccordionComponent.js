@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager, Image, ScrollView } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager, Image } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 export default class Accordian extends Component{
 
@@ -15,7 +15,7 @@ export default class Accordian extends Component{
     }
   render() {
     return (
-       <ScrollView>
+       <View>
             <TouchableOpacity ref={this.accordian} style={styles.row} onPress={()=>this.toggleExpand()}>
                 <Text style={[styles.title, styles.font]}>{this.props.title}</Text>
                 <Icon name={this.state.expanded ? 'keyboard-arrow-up' : 'keyboard-arrow-down'} size={30} color='#d0efff' />
@@ -33,7 +33,7 @@ export default class Accordian extends Component{
                     {this.props.children}
                 </View>
             }
-       </ScrollView>
+       </View>
     )
   }
   toggleExpand=()=>{
