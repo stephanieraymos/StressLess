@@ -37,6 +37,7 @@ class ContactComponent extends Component {
             title={"Contact Information"}
             wrapperStyle={{ margin: 20 }} >
             <Text
+              style={{textAlign: 'center'}}
               onPress={() => this.props.tip.email}>
               Email: stephanieraymos.com
         </Text>

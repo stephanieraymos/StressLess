@@ -31,7 +31,7 @@ function RenderItem(props) {
                 featuredTitle={tip.name}
                 image={{ uri: baseUrl + tip.image }}>
                 <Text
-                    style={{ margin: 10 }}>
+                    style={{ margin: 10, textAlign: 'center' }}>
                     {tip.description}
                 </Text>
             </Card>

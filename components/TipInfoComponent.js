@@ -21,10 +21,8 @@ const mapDispatchToProps = {
 
 
 function RenderTip(props) {
-  console.log('RenderTip', props)
 
   const { tip } = props;
-  console.log(tip);
   const shareTip = (title, message, url) => {
     Share.share({
       title: title,
@@ -42,72 +40,70 @@ function RenderTip(props) {
         {/* You can wrap image in Touchable Highlight or TouchableOpacity
           You can create a custom card component have receive on press prop
         */}
-        <Card
-          featuredTitle={tip.name}
-
-          image={{ uri: baseUrl + tip.image }}>
-            {console.log('message', props.navigation)}
-          <TouchableHighlight onPress={() => props.navigation.navigate(tip.component)}>
-            <Text style={{ margin: 10 }}>
+        <TouchableHighlight onPress={() => props.navigation.navigate(tip.component)}>
+          <Card
+            featuredTitle={tip.name}
+            image={{ uri: baseUrl + tip.image }}>
+            <Text style={{ margin: 10, textAlign: 'center' }}>
               {tip.description}
             </Text>
-          </TouchableHighlight>
 
-          <View
-            style={{
-              display: 'flex', flexDirection: 'row',
-              justifyContent: 'space-between'
-            }}>
-            {/* <Icon
+            <View
+              style={{
+                display: 'flex', flexDirection: 'row',
+                justifyContent: 'space-between'
+              }}>
+              {/* <Icon
               name={this.component ? 'heart' : 'heart-o'}
               type='font-awesome'
-              color='#f50'
+              color='#FF0000'
               raised
               reverse
               onPress={() => this.props.tips.name ?
                 console.log("Already set as a favorite tip") : props.markFavorite()}
             /> */}
-            <Icon
-              name={props.favorite ? 'heart' : 'heart-o'}
-              type='font-awesome'
-              color='#f50'
-              raised
-              reverse
-              onPress={() => props.favorite ?
-                console.log("Already set as a favorite tip") : props.markFavorite()}
-            />
-            <Icon
-              style={styles.cardItem}
-              name='pencil'
-              type='font-awesome'
-              color='#d0efff'
-              raised
-              reverse
-              onPress={() => props.onShowModal()}
-            />
-            <Icon
-              containerStyle={{
-                paddingRight: 8,
-                alignSelf: 'flex-end',
-              }}
-              name={props.message ? 'envelope' : 'envelope-o'}
-              type='font-awesome'
-              color='#0000FF'
-              raised
-              reverse
-              onPress={() => props.message()}
-            />
-            <Icon
-              name={'share'}
-              type='font-awesome'
-              color='#5637DD'
-              style={styles.cardItem}
-              raised
-              reverse
-              onPress={() => shareTip(tip.name, tip.description, baseUrl + tip.image)}
-            />
-          </View>
-        </Card>
+              <Icon
+                name={props.favorite ? 'heart' : 'heart-o'}
+                type='font-awesome'
+                color='#FF0000'
+                raised
+                reverse
+                onPress={() => props.favorite ?
+                  console.log("Already set as a favorite tip") : props.markFavorite()}
+              />
+              <Icon
+                style={styles.cardItem}
+                name='pencil'
+                type='font-awesome'
+                color='#FFA500'
+                raised
+                reverse
+                onPress={() => props.onShowModal()}
+              />
+              <Icon
+                containerStyle={{
+                  paddingRight: 8,
+                  alignSelf: 'flex-end',
+                }}
+                name={props.message ? 'envelope' : 'envelope-o'}
+                type='font-awesome'
+                color='#008000'
+                raised
+                reverse
+                onPress={() => props.message()}
+              />
+              <Icon
+                name={'share'}
+                type='font-awesome'
+                color='#800080'
+                style={styles.cardItem}
+                raised
+                reverse
+                onPress={() => shareTip(tip.name, tip.description, baseUrl + tip.image)}
+              />
+            </View>
+          </Card>
+        </TouchableHighlight>
       </Animatable.View>
 
     );

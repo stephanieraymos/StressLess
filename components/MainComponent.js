@@ -111,7 +111,7 @@ const ContactNavigator = createStackNavigator(
                 color: '#fff'
               },
               headerLeft: <Icon
-                  name='stretch'
+                  name='cloud'
                   type='font-awesome'
                   iconStyle={styles.stackIcon}
                   onPress={() => navigation.toggleDrawer()}
@@ -134,7 +134,7 @@ const ContactNavigator = createStackNavigator(
                     color: '#fff'
                 },
                 headerLeft: <Icon
-                    name='brain'
+                    name='gears'
                     type='font-awesome'
                     iconStyle={styles.stackIcon}
                     onPress={() => navigation.toggleDrawer()}
@@ -158,7 +158,9 @@ const ContactNavigator = createStackNavigator(
           })
         },
       TipInfo: { screen: TipInfo },
-      Journal: { screen: Journal }
+      Journal: { screen: Journal },
+      Yoga: { screen: Yoga },
+      Quiz: { screen: Quiz },
 
     }, 
     {
@@ -292,13 +294,12 @@ const MainNavigator = createDrawerNavigator(
         Login: {
             screen: LoginNavigator,
             navigationOptions: {
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({focused}) => (
                     <Icon
                         name='sign-in'
                         type='font-awesome'
                         size={24}
-                        color={tintColor}
-                    />
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }
         },
@@ -339,7 +340,7 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: 'Yoga',
                 drawerIcon: ({focused}) => (
                     <Icon
-                        name='stretch'
+                        name='cloud'
                         type='font-awesome'
                         size={24}
                         color={focused ? '#1AA7A6' : 'gray'}                    />
@@ -353,9 +354,9 @@ const MainNavigator = createDrawerNavigator(
                 drawerLabel: 'Quizzes',
                 drawerIcon: ({focused}) => (
                     <Icon
-                        name='chess'
+                        name='gears'
                         type='font-awesome'
-                        size={24}
+                        size={20}
                         color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }
@@ -378,13 +379,12 @@ const MainNavigator = createDrawerNavigator(
             screen: FavoritesNavigator,
             navigationOptions: {
                 drawerLabel: 'Favorite Tips',
-                drawerIcon: ({tintColor}) => (
+                drawerIcon: ({focused}) => (
                     <Icon
                         name='heart'
                         type='font-awesome'
                         size={24}
-                        color={tintColor}
-                    />
+                        color={focused ? '#1AA7A6' : 'gray'} />                    
                 )
             }
         },
@@ -412,7 +412,7 @@ const MainNavigator = createDrawerNavigator(
                     <Icon
                         name='address-card'
                         type='font-awesome'
-                        size={24}
+                        size={20}
                         color={focused ? '#1AA7A6' : 'gray'}                    />
                 )
             }

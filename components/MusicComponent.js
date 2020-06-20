@@ -23,20 +23,17 @@ export class Music extends Component {
       >
         {this.state.music.map(item => <TouchableOpacity
           onPress={() => Linking.openURL(item.link)}>
-
           <Tile
-
-            containerStyle={{ marginBottom: 30, marginTop: 30, marginLeft: 10, marginRight: 10, alignSelf: 'center', justifyContent: 'center', borderStyle: 'solid', borderWidth: 5,
-          }}
+            containerStyle={{
+              marginBottom: 30, marginTop: 30, marginLeft: 10, marginRight: 10, alignSelf: 'center', justifyContent: 'center', borderStyle: 'solid', borderWidth: 5,
+            }}
             title={item.name}
-            titleStyle={{textAlign: 'center'}}
+            titleStyle={{ textAlign: 'center' }}
             titleNumberOfLines={1}
-
             imageSrc={{ uri: baseUrl + item.image }}
             imageContainerStyle={{
               height: 200, width: 260, alignSelf: 'center',
             }}
-            
           >
           </Tile>
         </TouchableOpacity>

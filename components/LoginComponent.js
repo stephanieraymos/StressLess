@@ -104,11 +104,11 @@ class LoginTab extends Component {
                             <Icon
                                 name='user-plus'
                                 type='font-awesome'
-                                color='blue'
+                                color='black'
                                 iconStyle={{marginRight: 10}}
                             />
                         }
-                        titleStyle={{color: 'blue'}}
+                        titleStyle={{color: 'black'}}
                     />
                 </View>
             </View>
@@ -262,9 +262,9 @@ const Login = createBottomTabNavigator(
     {
         tabBarOptions: {
             activeBackgroundColor: '#1AA7A6',
-            inactiveBackgroundColor: '#CEC8FF',
+            inactiveBackgroundColor: '#D0EFFF',
             activeTintColor: '#fff',
-            inactiveTintColor: '#808080',
+            inactiveTintColor: 'black',
             labelStyle: {fontSize: 16}
         }
     }
