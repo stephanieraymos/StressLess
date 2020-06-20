@@ -53,7 +53,7 @@ export class YogaComponent extends Component {
         <Text>
           {item.data}
         </Text>
-        <Button title="Click me" onPress={ ()=>{ Linking.openURL(item.link)}} />
+        <Button title="See how" onPress={ ()=>{ Linking.openURL(item.link)}} />
       </View>
     </Accordian>)})
 

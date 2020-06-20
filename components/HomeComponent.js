@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Animated } from 'react-native';
+import { View, Text, Animated, TouchableHighlight } from 'react-native';
 import { Card } from 'react-native-elements';
 import { connect } from 'react-redux';
 import { baseUrl } from '../shared/baseUrl';
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 function RenderItem(props) {
-    const { item } = props;
+    const { tip } = props;
 
     if (props.isLoading) {
         return <Loading />;
@@ -24,16 +24,18 @@ function RenderItem(props) {
             </View>
         );
     }
-    if (item) {
+    if (tip) {
         return (
+            <TouchableHighlight onPress={() => props.navigation.navigate(tip.component)}>
             <Card
-                featuredTitle={item.name}
-                image={{ uri: baseUrl + item.image }}>
+                featuredTitle={tip.name}
+                image={{ uri: baseUrl + tip.image }}>
                 <Text
                     style={{ margin: 10 }}>
-                    {item.description}
+                    {tip.description}
                 </Text>
             </Card>
+        </TouchableHighlight>
         );
     }
     return <View />;
@@ -67,15 +69,15 @@ class Home extends Component {
     }
 
     render() {
-        console.log('featured', this.props.tips.tips.filter(item => item.featured))
         return (
             <Animated.ScrollView style={{ transform: [{ scale: this.state.scaleValue }] }}>
-                {this.props.tips.tips.filter(item => item.featured).map(item => <RenderItem
-                    item={item}
+                {this.props.tips.tips.filter(tip => tip.featured).map(tip => <RenderItem
+                    tip={tip}
                     isLoading={this.props.tips.isLoading}
                     errMess={this.props.tips.errMess}
-                />)}
+                    navigation={this.props.navigation}
 
+                />)}
             </Animated.ScrollView>
         );
     }

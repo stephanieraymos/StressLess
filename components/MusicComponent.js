@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ScrollView, TouchableOpacity, Linking } from 'react-native';
-import { Card } from 'react-native-elements';
+import { ScrollView, TouchableOpacity, Linking, StyleSheet } from 'react-native';
+import { Tile } from 'react-native-elements';
 import { baseUrl } from '../shared/baseUrl';
 import { MUSIC } from '../shared/music';
 
@@ -17,22 +17,33 @@ export class Music extends Component {
   }
 
   render() {
-    console.log('this is', this.state)
     return (
 
       <ScrollView
-        style={{}}>
+      >
         {this.state.music.map(item => <TouchableOpacity
           onPress={() => Linking.openURL(item.link)}>
-          
-          <Card
-            featuredTitle={item.name}
-            image={{ uri: baseUrl + item.image }}>
-          </Card>
+
+          <Tile
+
+            containerStyle={{ marginBottom: 30, marginTop: 30, marginLeft: 10, marginRight: 10, alignSelf: 'center', justifyContent: 'center', borderStyle: 'solid', borderWidth: 5,
+          }}
+            title={item.name}
+            titleStyle={{textAlign: 'center'}}
+            titleNumberOfLines={1}
+
+            imageSrc={{ uri: baseUrl + item.image }}
+            imageContainerStyle={{
+              height: 200, width: 260, alignSelf: 'center',
+            }}
+            
+          >
+          </Tile>
         </TouchableOpacity>
-)}
-        
+        )}
+
       </ScrollView>
+
     )
   }
 }
@@ -91,18 +102,21 @@ export class Music extends Component {
 
 
 
-// const styles = StyleSheet.create({
-//   cardRow: {
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     flex: 1,
-//     flexDirection: 'row',
-//     margin: 20
-//   },
-//   cardItem: {
-//     flex: 1,
-//     margin: 10
-//   }
-// });
+const styles = StyleSheet.create({
+  cardRow: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+    flexDirection: 'row',
+    margin: 20
+  },
+  cardItem: {
+    flex: 1,
+    margin: 10,
+    height: 200,
+    width: 200
+  }
+});
+
 
 export default Music;
