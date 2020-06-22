@@ -21,8 +21,7 @@ export class Music extends Component {
 
       <ScrollView
       >
-        {this.state.music.map(item => <TouchableOpacity
-          onPress={() => Linking.openURL(item.link)}>
+        {this.state.music.map(item =>
           <Tile
             containerStyle={{
               marginBottom: 30, marginTop: 30, marginLeft: 10, marginRight: 10, alignSelf: 'center', justifyContent: 'center', borderStyle: 'solid', borderWidth: 5,
@@ -31,21 +30,18 @@ export class Music extends Component {
             titleStyle={{ textAlign: 'center' }}
             titleNumberOfLines={1}
             imageSrc={{ uri: baseUrl + item.image }}
-            imageContainerStyle={{
-              height: 200, width: 260, alignSelf: 'center',
-            }}
+            onPress={() => Linking.openURL(item.link)}
+            imageContainerStyle={{ height: 200, width: 260, alignSelf: 'center' }}
+
           >
           </Tile>
-        </TouchableOpacity>
         )}
-
       </ScrollView>
-
     )
   }
 }
 
-{/* <Link /> */ }
+
 
 
 //      <TouchableOpacity
