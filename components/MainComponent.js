@@ -352,6 +352,20 @@ const MainNavigator = createDrawerNavigator(
             }
         },
 
+        Music: {
+            screen: MusicNavigator,
+            navigationOptions: {
+                drawerLabel: 'Music',
+                drawerIcon: ({focused}) => (
+                    <Icon
+                        name='music'
+                        type='font-awesome'
+                        size={24}
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
+                )
+            }
+        },
+
         Quiz: {
             screen: QuizNavigator,
             navigationOptions: {
@@ -435,19 +449,6 @@ const MainNavigator = createDrawerNavigator(
         //     }
         // },
 
-        Music: {
-            screen: MusicNavigator,
-            navigationOptions: {
-                drawerLabel: 'Music',
-                drawerIcon: ({focused}) => (
-                    <Icon
-                        name='music'
-                        type='font-awesome'
-                        size={24}
-                        color={focused ? '#1AA7A6' : 'gray'}                    />
-                )
-            }
-        }
     },
     {
         initialRouteName: 'Home',
@@ -489,19 +490,19 @@ class Main extends Component {
     };
 
 handleConnectivityChange = connectionInfo => {
-    let connectionMsg = 'You are now connected to an active network.';
+    let connectionMsg = 'Yooo, You are now connected to an active network.';
     switch (connectionInfo.type) {
         case 'none':
-            connectionMsg = 'No network connection is active.';
+            connectionMsg = 'Uh-oh bro, No network connection is active.';
             break;
         case 'unknown':
             connectionMsg = 'The network connection state is now unknown.';
             break;
         case 'cellular':
-            connectionMsg = 'You are now connected to a cellular network.';
+            connectionMsg = 'You are now connected to a cellular network, yo.';
             break;
         case 'wifi':
-            connectionMsg = 'You are now connected to a WiFi network.';
+            connectionMsg = 'You are now connected to a WiFi network, yo.';
             break;
     }
     (Platform.OS === 'ios') ? Alert.alert('Connection change:', connectionMsg)

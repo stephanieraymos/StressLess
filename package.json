@@ -16,6 +16,7 @@
     "expo-mail-composer": "^7.0.0",
     "expo-secure-store": "^7.0.0",
     "font-awesome": "^4.7.0",
+    "node.js": "0.0.1-security",
     "prop-types": "^15.6.0",
     "react": "~16.9.0",
     "react-animation-components": "^3.0.0",

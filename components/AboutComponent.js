@@ -74,7 +74,7 @@ class AboutComponent extends Component {
         <Animatable.View animation='fadeInDown' duration={2000} delay={1000}>
           <Mission />
           <Card
-            title="Community Partners">
+            title="Special Mentions">
             <FlatList
               data={this.props.partners.partners}
               renderItem={renderPartner}
