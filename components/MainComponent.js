@@ -14,8 +14,8 @@ import SafeAreaView from 'react-native-safe-area-view';
 import { connect } from 'react-redux';
 import { fetchTips, fetchComments, fetchPromotions,
     fetchPartners } from '../redux/ActionCreators';
-import * as WebBrowser from 'expo-web-browser';	
 import Music from './MusicComponent';
+import CountMethod from './CountMethodComponent'
 import Journal from './JournalComponent';
 import Yoga from './YogaComponent';
 import Quiz from './QuizComponent';
@@ -103,6 +103,29 @@ const ContactNavigator = createStackNavigator(
   const YogaNavigator = createStackNavigator(
     {
         Yoga: { screen: Yoga }
+    },
+    {
+        navigationOptions: ({navigation}) => ({
+            headerStyle: {
+                backgroundColor: '#1AA7A6'
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                color: '#fff'
+              },
+              headerLeft: <Icon
+                  name='cloud'
+                  type='font-awesome'
+                  iconStyle={styles.stackIcon}
+                  onPress={() => navigation.toggleDrawer()}
+          />
+          })
+    }
+  );
+
+  const CountMethodNavigator = createStackNavigator(
+    {
+        CountMethod: { screen: CountMethod }
     },
     {
         navigationOptions: ({navigation}) => ({
@@ -342,6 +365,20 @@ const MainNavigator = createDrawerNavigator(
             screen: YogaNavigator,
             navigationOptions: {
                 drawerLabel: 'Yoga',
+                drawerIcon: ({focused}) => (
+                    <Icon
+                        name='cloud'
+                        type='font-awesome'
+                        size={24}
+                        color={focused ? '#1AA7A6' : 'gray'}                    />
+                )
+            }
+        },
+
+        CountMethod: {
+            screen: CountMethodNavigator,
+            navigationOptions: {
+                drawerLabel: '5-4-3-2-1 METHOD',
                 drawerIcon: ({focused}) => (
                     <Icon
                         name='cloud'

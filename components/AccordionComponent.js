@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager, Image } from "react-native";
+import { View, TouchableOpacity, Text, StyleSheet, LayoutAnimation, Platform, UIManager } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 export default class Accordian extends Component{
 
@@ -64,10 +64,7 @@ const styles = StyleSheet.create({
     child:{
         backgroundColor: '#d0efff',
         padding:16,
-    },
-    imageStyle:{
-      width: 50,
-      height: 50,
+        textAlign: 'center'
     }
 });
 
